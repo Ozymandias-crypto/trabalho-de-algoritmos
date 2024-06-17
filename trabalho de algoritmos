@@ -49,23 +49,20 @@ class VisitaGuiada:
         self.descricao = descricao
         self.obras_de_arte = obras_de_arte
 
-# Exemplo de uso
 if __name__ == "__main__":
-    # Criar algumas obras, artistas, estilos, empréstimos e visitas guiadas para testar
     obra1 = ObraDeArte("Mona Lisa", "1503-1517", "Retrato", "Renascimento", "Famoso retrato de Lisa Gherardini", "Óleo sobre madeira", "Leonardo da Vinci", "Sala 1")
     artista1 = Artista("Leonardo da Vinci", "15 de abril de 1452", "Vinci, Itália", "Pioneiro do Renascimento italiano", ["Renascimento", "Humanismo"])
     estilo1 = EstiloArtistico("Renascimento", "Séculos XIV-XVII", "Valorização do ser humano e do conhecimento científico", "Escola Florentina")
     emprestimo1 = Emprestimo(obra1, "01/07/2024 - 01/10/2024", "Exposição Internacional", "João Silva", "Renascimento italiano")
     visita1 = VisitaGuiada("Grandes Mestres do Renascimento", "Conheça as obras mais famosas do Renascimento", [obra1])
 
-    # Exemplo de ordenação de obras por título
+
     obras_de_arte = [obra1, obra2, obra3]  # Supondo que obra2 e obra3 são outras obras
     obras_de_arte_ordenadas = sorted(obras_de_arte, key=lambda x: x.titulo)
 
     for obra in obras_de_arte_ordenadas:
         print(obra)
 
-    # Exemplo de escrita em arquivo CSV (pode ser adaptado conforme necessidade)
     with open('obras_de_arte.csv', 'w', newline='') as arquivo:
         escritor_csv = csv.writer(arquivo)
         escritor_csv.writerow(["Título", "Data de Criação", "Tema", "Estilo Artístico", "Descrição", "Técnica", "Autor", "Localização"])
